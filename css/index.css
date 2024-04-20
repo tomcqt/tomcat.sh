@@ -34,17 +34,18 @@ p {
     top: -1rem;
 }
 
+/*
 .maintext>div:nth-child(1),
 .maintext2>div:nth-child(1),
 .maintext2>div:nth-child(5) {
-    /* color: rgba(255,133,133); */
+     color: rgba(255,133,133);
     background: linear-gradient(90deg, rgba(255,133,133) 0%, rgb(255, 157, 157) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .maintext>div:nth-child(2) {
-    /* color: rgba(164,131,254); */
+    color: rgba(164,131,254);
     background: linear-gradient(90deg, rgba(128,255,192,1) 0%, rgba(164,131,254,1) 50%, rgba(255,133,133,1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -53,21 +54,31 @@ p {
 .maintext2>div:nth-child(2),
 .maintext2>div:nth-child(4),
 .maintext2>div:nth-child(6) {
-    /* color: rgb(128, 172, 255); */
+     color: rgb(128, 172, 255);
     background: linear-gradient(90deg, rgba(128,255,192,1) 0%, rgba(164,131,254,1) 50%, rgba(255,133,133,1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .maintext2>div:nth-child(3) {
-    /* color: rgb(255, 242, 128); */
+    /* color: rgb(255, 242, 128); *
     background: linear-gradient(90deg, rgba(128,255,192,1) 0%, rgba(164,131,254,1) 50%, rgba(255,133,133,1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
+} */
 
 /* .maintext>div, .maintext2>div {
     background: linear-gradient(90deg, rgba(128,255,192,1) 0%, rgba(164,131,254,1) 50%, rgba(255,133,133,1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 } */
+
+
+.gradi {
+background-image: linear-gradient(90deg, rgb(192, 99, 99) 0%, rgb(71, 143, 185) 100%);
+  background-size:auto;
+  background-attachment: fixed; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+}
