@@ -81,5 +81,5 @@ p {
   background-attachment: scroll; 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
 }
