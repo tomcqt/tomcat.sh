@@ -11,7 +11,7 @@ body {
     font-style: normal;
 }
 
-h1 {
+h1, h2 {
     font-family: "IBM Plex Mono", monospace;
     font-weight: 700;
     font-style: normal;
@@ -75,11 +75,11 @@ p {
 
 
 .gradi {
-/* background-image: linear-gradient(90deg, rgb(192, 99, 99) 0%, rgb(71, 143, 185) 100%); */
-  background-image: linear-gradient(90deg, rgba(128,255,192,1) 0%, rgba(164,131,254,1) 25%, rgba(255,133,133,1) 50%);
-  background-size: 1% 1%;
+  /* background-image: linear-gradient(90deg, rgb(192, 99, 99) 0%, rgb(71, 143, 185) 100%); */
+  background-image: linear-gradient(90deg, rgba(128,255,192,1) 0%, rgba(164,131,254,1) 50%, rgba(255,133,133,1) 100%);
+  /* background-size: 1% 1%; */
   background-attachment: scroll; 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* background-repeat: no-repeat; */
+  background-repeat: no-repeat;
 }
