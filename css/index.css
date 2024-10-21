@@ -83,3 +83,22 @@ p {
   -webkit-text-fill-color: transparent;
   background-repeat: no-repeat;
 }
+
+.project>p:nth-child(1) {
+  font-size: 2rem;
+}
+
+.project>p:nth-child(2) {
+  font-size: 1rem;
+  transform: translate(0, -2rem);
+}
+
+.project>p:nth-child(3) {
+  font-size: 0.75rem;
+  transform: translate(0, -2.75rem);
+  color: #404040;
+}
+
+.project>.linespacer {
+  transform:translate(0, -1rem);
+}
