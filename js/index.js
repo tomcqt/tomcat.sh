@@ -1,12 +1,12 @@
 var projects = [
   {
     "name": "Tanuki",
-    "desc": "A custom social media service that I made over Summer 2024.",
+    "desc": "A custom social media service that I made over Summer 2024. This project is currently down.",
     "time": "Made During: Summer 2024"
   },
   {
     "name": "tomcat's braille art workspace",
-    "desc": "A program that I made to make ASCII art using the Braille characters.",
+    "desc": "A program that I made to make ASCII art using the Braille characters. This project is currently being hosted <a href=\"https://www.tomcat.sh/braille\">here.</a>",
     "time": "Made During: December 2023"
   }
 ];
