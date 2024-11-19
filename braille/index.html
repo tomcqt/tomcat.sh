@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>tomcat's braille art workspace.</title>
+  </head>
+  <body>
+    <h2>tomcat's braille art workspace.</h2>
+    <p>pixels.</p>
+    <input id="01" type="checkbox"><input id="04" type="checkbox"><br>
+    <input id="02" type="checkbox"><input id="05" type="checkbox"><br>
+    <input id="03" type="checkbox"><input id="06" type="checkbox"><br>
+    <input id="07" type="checkbox"><input id="08" type="checkbox"><br>
+    
+    <p>pixel buttons.</p>
+    <button onclick=check()>generate</button><button onclick=clearnums()>clear checkboxes</button><button onclick=xswap()>mirror horizontally</button><button onclick=yswap()>mirror vertically</button><br>
+    <input id="hover" type="checkbox">switch state on hover<br>
+    <input id="dontclear" type="checkbox">dont clear for templates<br>
+    <input id="clearafter" type="checkbox">clear after generate
+    <p>templates.</p>
+    <button onclick=filled()>filled</button><button onclick=left()>left filled</button><button onclick=right()>right filled</button><button onclick=topf()>top filled</button><button onclick=bottom()>bottom filled</button><button onclick=openp()>open parenthase</button><button onclick=closedp()>closed parenthase</button>
+    <p>textbox buttons.</p>
+    <button onclick=newline()>new line</button><button onclick=clearbox()>clear text box</button><button onclick=backspace()>backspace</button><button onclick=clearunicode()>clear unicode output</button>
+    <p id="output">unicode number goes here.</p><br>
+    <textarea rows=10 cols=100 id="textarea" fontFamily="monochrome">this box is resizable! use the arrow in the bottom. (click clear text box before you start)</textarea>
+    <script src="script.js"></script>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </body>
+</html>
