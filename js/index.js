@@ -2,7 +2,12 @@ var projects = [
   {
     "name": "Tanuki",
     "desc": "A custom social media service that I made over Summer 2024.",
-    "time": "Made Durning: Summer 2024"
+    "time": "Made During: Summer 2024"
+  },
+  {
+    "name": "tomcat's braille art workspace",
+    "desc": "A program that I made to make ASCII art using the Braille characters.",
+    "time": "Made During: December 2023"
   }
 ];
 
