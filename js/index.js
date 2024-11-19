@@ -6,7 +6,7 @@ var projects = [
   },
   {
     "name": "tomcat's braille art workspace",
-    "desc": "A program that I made to make ASCII art using the Braille characters. This project is currently being hosted <a href=\"https://www.tomcat.sh/braille\">here.</a>",
+    "desc": "A program that I made to make ASCII art using the Braille characters. This project is currently being hosted at tomcat.sh/braille.",
     "time": "Made During: December 2023"
   }
 ];
