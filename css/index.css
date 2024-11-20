@@ -3,6 +3,7 @@ body {
     background: #151624;
     position: relative;
     left: 1rem;
+    overflow-x: hidden;
 }
 
 .linespacer {
