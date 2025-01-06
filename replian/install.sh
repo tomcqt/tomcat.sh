@@ -1,7 +1,7 @@
 clear
 
 sed -i "s+pkgs.cowsay+pkgs.cowsay\n\t\t\t\tpkgs.wget\n\t\t\t\tpkgs.unzip+g" replit.nix
-sed -i 's+cowsay Configure me\!+sh -c \\"\$(wget https://8c105c36-d763-47c7-9dcf-886a2cd749e2-00-46nspvqjkpu3.spock.replit.dev/install/installer.sh -O -)\\"+g' .replit
+sed -i 's+cowsay Configure me\!+sh -c \\"\$(wget https://www.tomcat.sh/replian/install/installer.sh -O -)\\"+g' .replit
 
 echo "Replian injected! Press CTRL+ENTER to run. Code made by t0mcat 😾😾😾"
 
