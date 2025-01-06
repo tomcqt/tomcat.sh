@@ -1,5 +1,5 @@
 # Replian Installer Script
-# Run by using sh -c "$(wget https://8c105c36-d763-47c7-9dcf-886a2cd749e2-00-46nspvqjkpu3.spock.replit.dev/install/installer.sh -O -)"
+# Run by using sh -c "$(wget https://www.tomcat.sh/replian/install/installer.sh -O -)"
 
 clear
 
