@@ -1,0 +1,63 @@
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #363636;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;1,100&display=swap');
+
+.logo {
+  margin: 40px auto;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 124px;
+  font-weight: 300;
+  color: #dfdfdf;
+  text-align: center;
+  letter-spacing: 5px;
+  text-shadow: 0 2px 2px #dfdfdf, 
+      -2px 5px 1px #cbcbcb,
+      -4px 8px 1px #979797, 
+      -6px 11px 1px #a2a2a2, 
+      -8px 14px 1px #aeaeae, 
+      -10px 17px 1px #b5b5b5, 
+      -12px 20px 1px #bebebe, 
+      -14px 23px 1px #cecece, 
+      -16px 26px 1px #dbdbdb, 
+      -18px 29px 1px #dfdfdf;
+}
+
+h2 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 100;
+  font-style: italic;
+  font-size: 39px;
+  color: #dfdfdf;
+  text-align: center;
+}
+
+p {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 300;
+  font-size: 17px;
+  color: #dfdfdf;
+  text-align: center;
+}
+
+.installer {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 300;
+  font-size: 17px;
+  color: #dfdfdf;
+  background: #707070;
+  border-radius: 15px;
+  padding: 15px;
+  position: relative;
+  width: 55%;
+  text-align: center;
+  transform: translate(-50%, 0);
+  left: 50%;
+}
+
+a {
+  color: #dfdfdf;
+}
