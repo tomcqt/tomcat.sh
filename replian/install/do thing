@@ -1,0 +1,1 @@
+apt update;yes|apt install curl git;sh -c "$(curl -fsSL https://Replian.t0mcat.repl.co/install/cool)"

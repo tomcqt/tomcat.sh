@@ -1,0 +1,6 @@
+# hehehehaw
+# sh -c "$(curl -fsSL https://Replian.t0mcat.repl.co/install/cool)"
+
+git clone https://github.com/dylanaraps/pfetch.git
+install pfetch/pfetch /usr/local/bin/
+echo Installed PFetch
