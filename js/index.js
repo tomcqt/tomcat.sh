@@ -1,5 +1,10 @@
 var projects = [
   {
+    "name": "adyOS",
+    "desc": "A full GNU/Linux-inspired pseudo-operating system written in JavaScript. You can view the source code at git.tomcat.sh/adyos",
+    "time": "Made During: January 2025"
+  },
+  {
     "name": "Tanuki",
     "desc": "A custom social media service that I made over Summer 2024. This project is currently down.",
     "time": "Made During: Summer 2024"
