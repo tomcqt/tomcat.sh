@@ -16,7 +16,7 @@ var projects = [
   },
   {
     "name": "tomcat's braille art workspace",
-    "desc": "A program that I made to make ASCII art using the Braille characters. This project is currently being hosted at tomcat.sh/braille.",
+    "desc": "A program that I made to make ASCII art using the Braille characters. This project is currently being hosted at ",
     "link": {
       "name": "tomcat.sh/braille",
       "url": "https://www.tomcat.sh/braille"
@@ -40,6 +40,7 @@ for (let i = 0; i < projects.length; i++) {
   if (projects[i].link != false) {
     let elmLink = document.createElement("a");
     let txtLink = document.createTextNode(projects[i].link.name);
+    elmLink.href = projects[i].link.url;
   }
 
   let elmTime = document.createElement("p");
@@ -54,11 +55,6 @@ for (let i = 0; i < projects.length; i++) {
   elmDesc.appendChild(txtDesc);
   container.appendChild(elmDesc);
   
-  if (projects[i].link != false) {
-    elmLink.appendChild(txtLink);
-    elmLink.setAttribute("href",  projects[i].link.url);
-    elmDesc.appendChild(elmLink);
-  }
   elmTime.appendChild(txtTime);
   container.appendChild(elmTime);
   
@@ -67,4 +63,9 @@ for (let i = 0; i < projects.length; i++) {
   container.appendChild(elmSpac);
 
   megacontainer.appendChild(container);
+
+  if (projects[i].link != false) {
+    elmLink.appendChild(txtLink);
+    elmDesc.appendChild(elmLink);
+  }
 }
