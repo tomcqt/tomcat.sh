@@ -1,17 +1,26 @@
 var projects = [
   {
     "name": "adyOS",
-    "desc": "A full GNU/Linux-inspired pseudo-operating system written in JavaScript. You can view the source code at git.tomcat.sh/adyos",
+    "desc": "A full GNU/Linux-inspired pseudo-operating system written in JavaScript. You can view the website at ",
+    "link": {
+      "name": "ady.best",
+      "url": "https://ady.best/"
+    },
     "time": "Made During: January 2025"
   },
   {
     "name": "Tanuki",
     "desc": "A custom social media service that I made over Summer 2024. This project is currently down.",
+    "link": false,
     "time": "Made During: Summer 2024"
   },
   {
     "name": "tomcat's braille art workspace",
     "desc": "A program that I made to make ASCII art using the Braille characters. This project is currently being hosted at tomcat.sh/braille.",
+    "link": {
+      "name": "tomcat.sh/braille",
+      "url": "https://www.tomcat.sh/braille"
+    },
     "time": "Made During: December 2023"
   }
 ];
@@ -28,6 +37,11 @@ for (let i = 0; i < projects.length; i++) {
   let elmDesc = document.createElement("p");
   let txtDesc = document.createTextNode(projects[i].desc);
 
+  if (projects[i].link != false) {
+    let elmLink = document.createElement("a");
+    let txtLink = document.createTextNode(projects[i].link.name);
+  }
+
   let elmTime = document.createElement("p");
   let txtTime = document.createTextNode(projects[i].time);
 
@@ -36,10 +50,18 @@ for (let i = 0; i < projects.length; i++) {
 
   elmName.appendChild(txtName);
   container.appendChild(elmName);
+  
   elmDesc.appendChild(txtDesc);
   container.appendChild(elmDesc);
+  
+  if (projects[i].link != false) {
+    elmLink.appendChild(txtLink);
+    elmLink.setAttribute("href",  projects[i].link.url);
+    elmDesc.appendChild(elmLink);
+  }
   elmTime.appendChild(txtTime);
   container.appendChild(elmTime);
+  
   elmSpac.appendChild(txtSpac);
   elmSpac.classList.add("linespacer");
   container.appendChild(elmSpac);
