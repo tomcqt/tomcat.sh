@@ -1,38 +1,48 @@
 body {
-    color: white;
-    background: #151624;
-    position: relative;
-    left: 1rem;
-    overflow-x: hidden;
+  color: white;
+  background: #151624;
+  position: relative;
+  left: 1rem;
+  overflow-x: hidden;
+}
+
+a {
+  color: white !important;
 }
 
 .linespacer {
-    font-family: "Flow Circular", system-ui;
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Flow Circular", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
-h1, h2 {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 700;
-    font-style: normal;
+h1,
+h2 {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
 }
 
 div {
-    display: inline;
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 700;
-    font-style: normal;
+  display: inline;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
 }
 
 h1 > div {
-    background: linear-gradient(90deg, rgba(128,255,192,1) 0%, rgba(164,131,254,1) 50%, rgba(255,133,133,1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(
+    90deg,
+    rgba(128, 255, 192, 1) 0%,
+    rgba(164, 131, 254, 1) 50%,
+    rgba(255, 133, 133, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 p {
-    top: -1rem;
+  top: -1rem;
 }
 
 /*
@@ -74,32 +84,36 @@ p {
     -webkit-text-fill-color: transparent;
 } */
 
-
 .gradi {
   /* background-image: linear-gradient(90deg, rgb(192, 99, 99) 0%, rgb(71, 143, 185) 100%); */
-  background-image: linear-gradient(90deg, rgba(128,255,192,1) 0%, rgba(164,131,254,1) 50%, rgba(255,133,133,1) 100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(128, 255, 192, 1) 0%,
+    rgba(164, 131, 254, 1) 50%,
+    rgba(255, 133, 133, 1) 100%
+  );
   /* background-size: 1% 1%; */
-  background-attachment: scroll; 
+  background-attachment: scroll;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-repeat: no-repeat;
 }
 
-.project>p:nth-child(1) {
+.project > p:nth-child(1) {
   font-size: 2rem;
 }
 
-.project>p:nth-child(2) {
+.project > p:nth-child(2) {
   font-size: 1rem;
   transform: translate(0, -2rem);
 }
 
-.project>p:nth-child(3) {
+.project > p:nth-child(3) {
   font-size: 0.75rem;
   transform: translate(0, -2.75rem);
   color: #404040;
 }
 
-.project>.linespacer {
-  transform:translate(0, -1rem);
+.project > .linespacer {
+  transform: translate(0, -1rem);
 }

@@ -1,28 +1,28 @@
 var projects = [
   {
-    "name": "adyOS",
-    "desc": "A full GNU/Linux-inspired pseudo-operating system written in JavaScript. You can view the website at ",
-    "link": {
-      "name": "ady.best",
-      "url": "https://ady.best/"
+    name: "adyOS",
+    desc: "A full GNU/Linux-inspired pseudo-operating system written in JavaScript. You can view the website at %link%.",
+    link: {
+      name: "ady.best",
+      url: "https://ady.best/",
     },
-    "time": "Made During: January 2025"
+    time: "Made During: January 2025",
   },
   {
-    "name": "Tanuki",
-    "desc": "A custom social media service that I made over Summer 2024. This project is currently down.",
-    "link": false,
-    "time": "Made During: Summer 2024"
+    name: "Tanuki",
+    desc: "A custom social media service that I made over Summer 2024. This project is currently down.",
+    link: false,
+    time: "Made During: Summer 2024",
   },
   {
-    "name": "tomcat's braille art workspace",
-    "desc": "A program that I made to make ASCII art using the Braille characters. This project is currently being hosted at ",
-    "link": {
-      "name": "tomcat.sh/braille",
-      "url": "https://www.tomcat.sh/braille"
+    name: "tomcat's braille art workspace",
+    desc: "A program that I made to make ASCII art using the Braille characters. This project is currently being hosted at %link%.",
+    link: {
+      name: "tomcat.sh/braille",
+      url: "https://www.tomcat.sh/braille",
     },
-    "time": "Made During: December 2023"
-  }
+    time: "Made During: December 2023",
+  },
 ];
 
 for (let i = 0; i < projects.length; i++) {
@@ -30,34 +30,30 @@ for (let i = 0; i < projects.length; i++) {
 
   let container = document.createElement("div");
   container.classList.add("project");
-  
+
   let elmName = document.createElement("p");
   let txtName = document.createTextNode(projects[i].name);
 
   let elmDesc = document.createElement("p");
   let txtDesc = document.createTextNode(projects[i].desc);
 
-  if (projects[i].link != false) {
-    let elmLink = document.createElement("a");
-    let txtLink = document.createTextNode(projects[i].link.name);
-    elmLink.href = projects[i].link.url;
-  }
-
   let elmTime = document.createElement("p");
   let txtTime = document.createTextNode(projects[i].time);
 
   let elmSpac = document.createElement("p");
-  let txtSpac = document.createTextNode("linespacerlinespacerlinespacerlinespacerlinespacerlinespacer");
+  let txtSpac = document.createTextNode(
+    "linespacerlinespacerlinespacerlinespacerlinespacerlinespacer"
+  );
 
   elmName.appendChild(txtName);
   container.appendChild(elmName);
-  
+
   elmDesc.appendChild(txtDesc);
   container.appendChild(elmDesc);
-  
+
   elmTime.appendChild(txtTime);
   container.appendChild(elmTime);
-  
+
   elmSpac.appendChild(txtSpac);
   elmSpac.classList.add("linespacer");
   container.appendChild(elmSpac);
@@ -65,7 +61,9 @@ for (let i = 0; i < projects.length; i++) {
   megacontainer.appendChild(container);
 
   if (projects[i].link != false) {
-    elmLink.appendChild(txtLink);
-    elmDesc.appendChild(elmLink);
+    elmDesc.innerHTML = elmDesc.innerHTML.replace(
+      "%link%",
+      '<a href="' + projects[i].link.url + '">' + projects[i].link.name + "</a>"
+    );
   }
 }
