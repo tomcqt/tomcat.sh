@@ -15,6 +15,15 @@ var projects = [
     time: "Made During: Summer 2024",
   },
   {
+    name: "Telatro",
+    desc: "A port of Balatro to the web. This project is being hosted at %link%.",
+    link: {
+      name: "telatro.tomcat.sh",
+      url: "https://telatro.tomcat.sh/",
+    },
+    time: "Made during: March 2025"
+  }
+  {
     name: "tomcat's braille art workspace",
     desc: "A program that I made to make ASCII art using the Braille characters. This project is currently being hosted at %link%.",
     link: {
