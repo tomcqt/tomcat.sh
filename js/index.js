@@ -21,8 +21,8 @@ var projects = [
       name: "telatro.tomcat.sh",
       url: "https://telatro.tomcat.sh/",
     },
-    time: "Made during: March 2025"
-  }
+    time: "Made during: March 2025",
+  },
   {
     name: "tomcat's braille art workspace",
     desc: "A program that I made to make ASCII art using the Braille characters. This project is currently being hosted at %link%.",
