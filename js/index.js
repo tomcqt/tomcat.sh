@@ -103,13 +103,13 @@ for (let i = 0; i < projects.length; i++) {
 let urls = {
   email: "mailto://hi@tomcat.sh",
   github: "https://git.tomcat.sh/",
-  discord: "%comingsoon%",
-  twitter: "%comingsoon%",
-  bluesky: "%comingsoon%",
-  reddit: "%comingsoon%",
+  discord: "https://discord.com/invite/jmBWJt2u",
+  twitter: "https://twitter.com/txmcqt",
+  bluesky: "https://bsky.app/profile/tomcat.sh",
+  reddit: "https://reddit.com/u/tomcatonrblx",
   youtube: "https://youtube.com/@tomcat.c",
-  twitch: "%comingsoon%",
-  steam: "%comingsoon%",
+  twitch: "https://twitch.tv/tomcatsh",
+  steam: "https://steamcommunity.com/id/tomcatsh/",
 };
 
 function social(name) {
