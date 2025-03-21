@@ -28,6 +28,19 @@ div {
   font-family: "IBM Plex Mono", monospace;
   font-weight: 700;
   font-style: normal;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+center {
+  display: inline;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0;
+  padding-bottom: 0;
+  font-size: 12px;
+  text-align: center;
 }
 
 h1 > div {
@@ -108,12 +121,67 @@ p {
   transform: translate(0, -2rem);
 }
 
+.project > a {
+  font-size: 0.8rem;
+  position: relative;
+  bottom: 2.75rem;
+}
+
+.project > p:nth-child(4),
 .project > p:nth-child(3) {
   font-size: 0.75rem;
-  transform: translate(0, -2.75rem);
+  transform: translate(0, -3rem);
   color: #404040;
 }
 
 .project > .linespacer {
   transform: translate(0, -1rem);
+}
+
+.twitter {
+  color: #1da1f2;
+}
+
+.bluesky {
+  color: #0886fe;
+}
+
+.reddit {
+  color: #ff6314;
+}
+
+.youtube {
+  color: #ff0000;
+}
+
+.twitch {
+  color: #7c56c3;
+}
+
+.discord {
+  color: #7289da;
+}
+
+.steam {
+  color: #66c0f4;
+}
+
+.github {
+  color: #2da44e;
+}
+
+* {
+  cursor: default;
+}
+
+a {
+  cursor: pointer;
+}
+
+.socials > span {
+  cursor: pointer;
+}
+
+.nocursor {
+  cursor: default;
 }

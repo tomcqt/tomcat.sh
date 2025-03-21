@@ -6,12 +6,14 @@ var projects = [
       name: "ady.best",
       url: "https://ady.best/",
     },
+    source: "https://git.ady.best/",
     time: "Made During: January 2025",
   },
   {
     name: "Tanuki",
     desc: "A custom social media service that I made over Summer 2024. This project is currently down.",
     link: false,
+    source: "https://git.tomcat.sh/tanukitweaks/",
     time: "Made During: Summer 2024",
   },
   {
@@ -21,6 +23,7 @@ var projects = [
       name: "telatro.tomcat.sh",
       url: "https://telatro.tomcat.sh/",
     },
+    source: "https://git.tomcat.sh/Telatro/",
     time: "Made during: March 2025",
   },
   {
@@ -30,6 +33,7 @@ var projects = [
       name: "tomcat.sh/braille",
       url: "https://www.tomcat.sh/braille",
     },
+    source: false,
     time: "Made During: December 2023",
   },
 ];
@@ -46,12 +50,25 @@ for (let i = 0; i < projects.length; i++) {
   let elmDesc = document.createElement("p");
   let txtDesc = document.createTextNode(projects[i].desc);
 
+  let elmSource = document.createElement("a");
+  let txtSource;
+  if (projects[i].source) {
+    txtSource = document.createTextNode("Click here to view the source code.");
+  } else {
+    txtSource = document.createTextNode(
+      "Source code unavaliable for this project."
+    );
+    elmSource.classList.add("nocursor");
+  }
+
   let elmTime = document.createElement("p");
   let txtTime = document.createTextNode(projects[i].time);
 
   let elmSpac = document.createElement("p");
   let txtSpac = document.createTextNode(
-    "linespacerlinespacerlinespacerlinespacerlinespacerlinespacer"
+    i + 1 == projects.length
+      ? "linespacerlinespacerlinespacerlinespacerlinespacerlinespacerlinespacerlinespacer"
+      : "linespacerlinespacerlinespacerlinespacerlinespacerlinespacer"
   );
 
   elmName.appendChild(txtName);
@@ -59,6 +76,12 @@ for (let i = 0; i < projects.length; i++) {
 
   elmDesc.appendChild(txtDesc);
   container.appendChild(elmDesc);
+
+  elmSource.appendChild(txtSource);
+  container.appendChild(elmSource);
+  if (projects[i].source) {
+    elmSource.href = projects[i].source;
+  }
 
   elmTime.appendChild(txtTime);
   container.appendChild(elmTime);
@@ -74,5 +97,25 @@ for (let i = 0; i < projects.length; i++) {
       "%link%",
       '<a href="' + projects[i].link.url + '">' + projects[i].link.name + "</a>"
     );
+  }
+}
+
+let urls = {
+  email: "mailto://hi@tomcat.sh",
+  github: "https://git.tomcat.sh/",
+  discord: "%comingsoon%",
+  twitter: "%comingsoon%",
+  bluesky: "%comingsoon%",
+  reddit: "%comingsoon%",
+  youtube: "https://youtube.com/@tomcat.c",
+  twitch: "%comingsoon%",
+  steam: "%comingsoon%",
+};
+
+function social(name) {
+  if (urls[name] != "%comingsoon%") {
+    window.open(urls[name]);
+  } else {
+    alert("Coming soon!");
   }
 }
