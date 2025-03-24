@@ -27,6 +27,13 @@ var projects = [
     time: "Made during: March 2025",
   },
   {
+    name: "tomcat.sh",
+    desc: "The website that you are currently on!",
+    link: false,
+    source: "https://git.tomcat.sh/tomcat.sh",
+    time: "Made during: March 2024 through Today",
+  },
+  {
     name: "tomcat's braille art workspace",
     desc: "A program that I made to make ASCII art using the Braille characters. This project is currently being hosted at %link%.",
     link: {
