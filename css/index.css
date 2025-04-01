@@ -185,3 +185,7 @@ a {
 .nocursor {
   cursor: default;
 }
+
+.huge {
+  font-size: 4rem;
+}
