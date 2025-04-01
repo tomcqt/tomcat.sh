@@ -189,3 +189,7 @@ a {
 .huge {
   font-size: 4rem;
 }
+
+.temp-message > p {
+  transform: translate(30vw, 0);
+}
