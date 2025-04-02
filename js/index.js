@@ -110,7 +110,7 @@ for (let i = 0; i < projects.length; i++) {
 let urls = {
   email: "mailto://hi@tomcat.sh",
   github: "https://git.tomcat.sh/",
-  discord: "https://discord.com/invite/jmBWJt2u",
+  discord: "https://discord.com/users/1059605055411601429",
   twitter: "https://twitter.com/txmcqt",
   bluesky: "https://bsky.app/profile/tomcat.sh",
   reddit: "https://reddit.com/u/tomcatonrblx",
