@@ -28,7 +28,7 @@ for (let i = 0; i < projects.length; i++) {
   let txtSpac = document.createTextNode(
     i + 1 == projects.length
       ? "linespacerlinespacerlinespacerlinespacerlinespacerlinespacerlinespacerlinespacer"
-      : "linespacerlinespacerlinespacerlinespacerlinespacerlinespacer"
+      : /*"linespacerlinespacerlinespacerlinespacerlinespacerlinespacer"*/ ""
   );
 
   elmName.appendChild(txtName);
