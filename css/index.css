@@ -188,6 +188,7 @@ a {
 
 .huge {
   font-size: 4rem;
+  line-height: 1rem;
 }
 
 .temp-message > p {
