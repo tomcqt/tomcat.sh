@@ -34,14 +34,14 @@ let projects = [
       url: "https://meowguardon.top",
     },
     source: "https://github.com/meowguard/site",
-    time: "Ran during: February 2025 to Present",
+    time: "Ran during: March 2025 to Today (Ongoing!)",
   },
   {
     name: "tomcat.sh",
     desc: "The website that you are currently on!",
     link: false,
     source: "https://git.tomcat.sh/tomcat.sh",
-    time: "Made during: March 2024 through Today",
+    time: "Made during: March 2024 to April 2025",
   },
   {
     name: "tomcat's braille art workspace",
