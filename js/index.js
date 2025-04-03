@@ -67,3 +67,10 @@ function social(name) {
     alert("Coming soon!");
   }
 }
+
+if (temp.enabled) {
+  document.getElementById("temp_title").innerHTML = temp.title;
+  document.getElementById("temp_message").innerHTML = temp.message;
+} else {
+  document.getElementById("temp-message").remove();
+}
