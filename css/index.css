@@ -213,7 +213,7 @@ a {
 .friends {
   position: absolute;
   top: -4rem;
-  right: calc(88px - 5rem);
+  right: calc(88px - 3.5rem);
   padding: 0;
   margin: 0;
 }
