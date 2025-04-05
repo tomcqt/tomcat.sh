@@ -2,8 +2,16 @@ body {
   color: white;
   background: #151624;
   position: relative;
-  left: 1rem;
+  left: 2rem;
   overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+html {
+  padding: 0;
+  margin: 0;
 }
 
 *::selection {
@@ -21,7 +29,8 @@ a {
 }
 
 h1,
-h2 {
+h2,
+.friends-text {
   font-family: "IBM Plex Mono", monospace;
   font-weight: 700;
   font-style: normal;
@@ -197,4 +206,30 @@ a {
 
 .temp-message > p {
   transform: translate(30vw, 0);
+}
+
+.friends {
+  position: absolute;
+  top: -4rem;
+  right: calc(88px - 4.5rem + 2px);
+  padding: 0;
+  margin: 0;
+}
+
+.friends-text {
+  position: absolute;
+  top: -6rem;
+  right: calc(88px + 2rem);
+  font-size: 1.75rem;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.friends > a > img {
+  padding: 0;
+  margin: 0;
+  margin-bottom: -4px;
+  position: relative;
 }
