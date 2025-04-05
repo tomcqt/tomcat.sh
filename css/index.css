@@ -211,7 +211,7 @@ a {
 .friends {
   position: absolute;
   top: -4rem;
-  right: calc(88px - 5rem + 2px);
+  right: calc(88px - 5rem);
   padding: 0;
   margin: 0;
 }
