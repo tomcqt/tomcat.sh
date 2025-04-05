@@ -64,6 +64,7 @@ h1 > div {
     rgba(255, 133, 133, 1) 100%
   );
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -121,6 +122,7 @@ p {
   /* background-size: 1% 1%; */
   background-attachment: scroll;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   background-repeat: no-repeat;
 }
