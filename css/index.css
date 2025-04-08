@@ -212,7 +212,10 @@ a {
 
 .friends {
   position: absolute;
-  top: -4rem;
+  /* for when using a temp message */
+  /* top: -4rem; */
+  /* for when not using a temp message */
+  top: -1.35rem;
   right: calc(88px - 3.5rem);
   padding: 0;
   margin: 0;
@@ -220,7 +223,10 @@ a {
 
 .friends-text {
   position: absolute;
-  top: -6rem;
+  /* for when using a temp message */
+  /* top: -6rem; */
+  /* for when not using a temp message */
+  top: -3.35rem;
   right: calc(88px + 2rem);
   font-size: 1.75rem;
 }
