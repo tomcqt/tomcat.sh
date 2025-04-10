@@ -27,6 +27,16 @@ let projects = [
     time: "Made during: March 2025",
   },
   {
+    name: "NyaByte",
+    desc: "The people from MeowGuard but now working on other shit. You can see our site at %link%.",
+    link: {
+      name: "nyabyte.dev",
+      url: "https://nyabyte.dev",
+    },
+    source: "https://github.com/nyaabyte/site",
+    time: "Together During: April 2025 to Present",
+  },
+  {
     name: "Meowguard",
     desc: "A botting group for the YouTube Draws web application. You can see our site at %link%. (may shut down soon)",
     link: {
