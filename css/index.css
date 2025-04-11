@@ -242,3 +242,11 @@ a {
   position: relative;
   cursor: pointer;
 }
+
+.friends > img,
+.friends > iframe {
+  padding: 0;
+  margin: 0;
+  margin-bottom: -4px;
+  position: relative;
+}
