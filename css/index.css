@@ -250,3 +250,14 @@ a {
   margin-bottom: -4px;
   position: relative;
 }
+
+/* disable friends menu when on mobile */
+@media (max-width: 600px) {
+  .friends {
+    display: none;
+  }
+
+  .friends-text {
+    display: none;
+  }
+}
