@@ -38,18 +38,21 @@ let projects = [
   },
   {
     name: "Meowguard",
-    desc: "A botting group for the YouTube Draws web application. You can see our site at %link%. (may shut down soon)",
+    desc: "A botting group for the %link%.",
     link: {
-      name: "meowguardon.top",
-      url: "https://meowguardon.top",
+      name: "YouTube Draws web application",
+      url: "https://ytdraws.win",
     },
     source: "https://github.com/meowguard/site",
     time: "Ran during: March 2025 to April 2025",
   },
   {
     name: "tomcat.sh",
-    desc: "The website that you are currently on!",
-    link: false,
+    desc: "The website that you are currently on! You can check out the data behind the site %link%.",
+    link: {
+      name: "here",
+      url: "/data",
+    },
     source: "https://git.tomcat.sh/tomcat.sh",
     time: "Made during: March 2024 to April 2025",
   },
