@@ -1,0 +1,15 @@
+{
+  "name": "tomcat.sh",
+  "version": "1.0.0",
+  "description": "my website",
+  "main": "index.html",
+  "scripts": {
+    "host": "npx http-server -p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.tomcat.sh/tomcat.sh"
+  },
+  "author": "tomcat with a q",
+  "license": "None"
+}
