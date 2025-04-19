@@ -63,10 +63,31 @@ for (let i = 0; i < projects.length; i++) {
   }
 }
 
+// add the social media links
+let scontainer = document.getElementById("socials-container");
+contacts.forEach((i, j, k) => {
+  let element = document.createElement("span");
+
+  element.style.color = i.color;
+  element.onclick = function () {
+    social(i.link);
+  };
+
+  let text = document.createTextNode(i.name);
+
+  element.appendChild(text);
+  scontainer.appendChild(element);
+
+  if (j + 1 != k.length) {
+    let dot = document.createTextNode(" • ");
+    scontainer.appendChild(dot);
+  }
+});
+
 // Make the social media links work
 function social(name) {
-  if (urls[name] != "%comingsoon%") {
-    window.open(urls[name]);
+  if (name != "%comingsoon%") {
+    window.open(name);
   } else {
     alert("Coming soon!");
   }
