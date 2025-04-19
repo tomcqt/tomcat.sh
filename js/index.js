@@ -241,9 +241,9 @@ function generateLastUpdated() {
         } else {
           output =
             time.day.toString() +
-            endings[time.day] +
+            endings[time.day - 1] +
             " " +
-            months[time.month] +
+            months[time.month - 1] +
             ", " +
             (2000 + time.year).toString();
         }
@@ -258,9 +258,9 @@ function generateLastUpdated() {
           .innerText.replace(
             "DateHere",
             time.day.toString() +
-              endings[time.day] +
+              endings[time.day - 1] +
               " " +
-              months[time.month] +
+              months[time.month - 1] +
               ", " +
               (2000 + time.year).toString()
           );
