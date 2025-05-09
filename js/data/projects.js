@@ -18,12 +18,9 @@ let projects = [
   },
   {
     name: "Telatro",
-    desc: "A port of Balatro to the web. This project is being hosted at %link%.",
-    link: {
-      name: "telatro.tomcat.sh",
-      url: "https://telatro.tomcat.sh/",
-    },
-    source: "https://git.tomcat.sh/Telatro/",
+    desc: "A port of Balatro to the web. This project is no longer being hosted nor on GitHub due to LocalThunk asking for it to be taken down.",
+    link: false,
+    source: false,
     time: "Made during: March 2025",
   },
   {
