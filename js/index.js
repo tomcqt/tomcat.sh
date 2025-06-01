@@ -213,12 +213,14 @@ let endings = [
   "st", // 31st
 ];
 
+const enable_location = false;
+
 function generateLastUpdated() {
   let time = misc.lastUpdated;
   let output = "";
 
   // check if user is in usa based on ip location
-  if ("geolocation" in navigator) {
+  if ("geolocation" in navigator && enable_location) {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const lat = position.coords.latitude;
