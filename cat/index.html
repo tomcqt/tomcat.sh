@@ -4,5 +4,5 @@
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const id = urlParams.get("!");
-  window.location.href = "https://cdn2.thecatapi.com/images/" + id + (id.includes(".gif") ? ".gif" : ".jpg");
+  window.location.href = "https://cdn2.thecatapi.com/images/" + id + (id.includes(".gif") ? "" : ".jpg");
 </script>
