@@ -1,19 +1,42 @@
 <!-- simple redirect to cdn2.thecatapi.com/images/[id].jpg -->
 <!-- usage: https://www.tomcat.sh/cat/?!=id                -->
-<p>loading...</p>
-<script>
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const id = urlParams.get("!");
-  if (id) {
-    window.location.href = "https://cdn2.thecatapi.com/images/" + id + (id.includes(".gif") ? "" : ".jpg");
-  } else {
-    fetch("https://api.thecatapi.com/v1/images/search")
-      .then(response => response.json())
-      .then(data => {
-        if (data && data[0] && data[0].url) {
-          window.location.href = data[0].url;
-        }
-      });
-  }
-</script>
+<head>
+  <meta property="og:title" content="Tomcat's Cats" />
+  <meta property="og:description" content="Get a random cat image!" />
+  <meta id="og-image" property="og:image" content="" />
+  <title>Random Cat</title>
+</head>
+<body>
+  <p id="status">loading...</p>
+  <img id="cat-img" style="max-width:100%;display:none;" />
+  <script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const id = urlParams.get("!");
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    const status = document.getElementById('status');
+    const catImg = document.getElementById('cat-img');
+
+    function setEmbed(url) {
+      ogImage.setAttribute("content", url);
+      catImg.src = url;
+      catImg.style.display = "block";
+      status.textContent = "Here's your cat!";
+    }
+
+    if (id) {
+      const imgUrl = "https://cdn2.thecatapi.com/images/" + id + (id.includes(".gif") ? "" : ".jpg");
+      setEmbed(imgUrl);
+    } else {
+      fetch("https://api.thecatapi.com/v1/images/search")
+        .then(response => response.json())
+        .then(data => {
+          if (data && data[0] && data[0].url) {
+            setEmbed(data[0].url);
+          } else {
+            status.textContent = "Could not load cat image.";
+          }
+        });
+    }
+  </script>
+</body>
