@@ -1,0 +1,8 @@
+<!-- simple redirect to cdn2.thecatapi.com/images/[id].jpg -->
+<!-- usage: https://www.tomcat.sh/cat/?!=id                -->
+<script>
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const id = urlParams.get("!");
+  window.location.href = "https://cdn2.thecatapi.com/images/" + id + ".jpg";
+</script>
