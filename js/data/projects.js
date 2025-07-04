@@ -10,6 +10,16 @@ let projects = [
     time: "Made During: January 2025",
   },
   {
+    name: "MeowBot",
+    desc: "A custom bot for %link% that was made to help moderate and have fun and to not play the game.",
+    link: {
+      name: "JKLM.FUN",
+      url: "https://jklm.fun/",
+    },
+    source: false,
+    time: "Made During: May 2025 - Present",
+  },
+  {
     name: "Tanuki",
     desc: "A custom social media service that I made over Summer 2024. This project is currently down.",
     link: false,
