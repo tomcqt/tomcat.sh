@@ -1,7 +1,7 @@
 let misc = {
   lastUpdated: {
-    day: 19,
-    month: 4,
+    day: 12,
+    month: 7,
     year: 25,
   },
 };
