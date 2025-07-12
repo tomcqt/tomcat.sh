@@ -17,7 +17,7 @@ let projects = [
       url: "https://jklm.fun/",
     },
     source: false,
-    time: "Made During: May 2025 - Present",
+    time: "Made During: May 2025 - July 2025",
   },
   {
     name: "Tanuki",
@@ -32,6 +32,16 @@ let projects = [
     link: false,
     source: false,
     time: "Made during: March 2025",
+  },
+  {
+    name: "Sillycord",
+    desc: "A simple Discord bot meant to be installed to your profile and used anywhere! You can invite it by %link%.",
+    link: {
+      name: "clicking here",
+      url: "https://sillycord.tomcat.sh/invite",
+    },
+    source: "https://git.tomcat.sh/Sillycord",
+    time: "Made During: July 2025 - Present",
   },
   {
     name: "NyaByte",
