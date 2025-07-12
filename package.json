@@ -1,6 +1,6 @@
 {
   "name": "tomcat.sh",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "my website",
   "main": "index.html",
   "scripts": {
