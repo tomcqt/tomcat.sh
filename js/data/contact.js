@@ -11,7 +11,7 @@ let contacts = [
   },
   {
     name: "discord",
-    link: "https://discord.com/users/1059605055411601429",
+    link: "https://discord.gg/kuCm2hjsej",
     color: "#7289da",
   },
   {
