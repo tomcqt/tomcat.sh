@@ -282,7 +282,6 @@ function generateLastUpdated() {
               (2000 + time.year).toString()
           );
       }
-  }
 }
 
 generateLastUpdated();
