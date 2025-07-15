@@ -43,26 +43,26 @@ let projects = [
     source: "https://git.tomcat.sh/Sillycord",
     time: "Made During: July 2025 - Present",
   },
-  {
-    name: "NyaByte",
-    desc: "The people from MeowGuard but now working on other shit. You can see our site at %link%.",
-    link: {
-      name: "nyabyte.dev",
-      url: "https://nyabyte.dev",
-    },
-    source: "https://github.com/nyaabyte/site",
-    time: "Together During: April 2025 to Present",
-  },
-  {
-    name: "Meowguard",
-    desc: "A botting group for the %link%.",
-    link: {
-      name: "YouTube Draws web application",
-      url: "https://ytdraws.win",
-    },
-    source: "https://github.com/meowguard/site",
-    time: "Ran during: March 2025 to April 2025",
-  },
+  // {
+  //   name: "NyaByte",
+  //   desc: "The people from MeowGuard but now working on other shit. You can see our site at %link%.",
+  //   link: {
+  //     name: "nyabyte.dev",
+  //     url: "https://nyabyte.dev",
+  //   },
+  //   source: "https://github.com/nyaabyte/site",
+  //   time: "Together During: April 2025 to Present",
+  // },
+  // {
+  //   name: "Meowguard",
+  //   desc: "A botting group for the %link%.",
+  //   link: {
+  //     name: "YouTube Draws web application",
+  //     url: "https://ytdraws.win",
+  //   },
+  //   source: "https://github.com/meowguard/site",
+  //   time: "Ran during: March 2025 to April 2025",
+  // },
   {
     name: "tomcat.sh",
     desc: "The website that you are currently on! You can check out the data behind the site %link%.",
