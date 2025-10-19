@@ -1,10 +1,5 @@
 let contacts = [
   {
-    name: "email",
-    link: "mailto:hi@tomcat.sh",
-    color: "#ffffff",
-  },
-  {
     name: "github",
     link: "https://git.tomcat.sh/",
     color: "#2da44e",

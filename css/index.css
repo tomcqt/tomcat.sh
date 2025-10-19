@@ -261,3 +261,58 @@ a {
     display: none;
   }
 }
+
+.div-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#code {
+  position: relative;
+  font-size: small;
+  color: #8aadf4;
+  cursor: pointer;
+  margin: 0;
+  font-family: monospace;
+  width: 76ch;
+  bottom: 4ch;
+  transform: translateX(-50%);
+}
+#out {
+  position: relative;
+  font-size: small;
+  display: block;
+  line-height: 1.1;
+  width: 54ch;
+  font-family: monospace;
+  margin: 0px;
+  color: #cad3f5;
+  bottom: 6ch;
+}
+.bytehl {
+  background: #99d1db;
+  color: #002 !important;
+}
+.charhl {
+  background: #e5c890;
+  color: #000 !important;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.blink {
+  animation: blink 1s step-start infinite;
+}
+
+#code > span {
+  cursor: pointer;
+}

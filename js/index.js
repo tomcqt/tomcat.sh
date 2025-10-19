@@ -271,17 +271,17 @@ function generateLastUpdated() {
   } else {
     console.warn("Geolocation is not supported by this browser.");
     document.getElementById("footer").innerText = document
-          .getElementById("footer")
-          .innerText.replace(
-            "DateHere",
-            time.day.toString() +
-              endings[time.day - 1] +
-              " " +
-              months[time.month - 1] +
-              ", " +
-              (2000 + time.year).toString()
-          );
-      }
+      .getElementById("footer")
+      .innerText.replace(
+        "DateHere",
+        time.day.toString() +
+          endings[time.day - 1] +
+          " " +
+          months[time.month - 1] +
+          ", " +
+          (2000 + time.year).toString()
+      );
+  }
 }
 
 generateLastUpdated();
