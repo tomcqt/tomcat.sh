@@ -9,6 +9,7 @@
 <body>
   <p id="status">loading...</p>
   <img id="cat-img" style="max-width:100%;display:none;" />
+  <a onclick="copy();" href="#" style="display: none;" id="copy">copy cat</a>
   <script>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -16,12 +17,22 @@
     const ogImage = document.querySelector('meta[property="og:image"]');
     const status = document.getElementById('status');
     const catImg = document.getElementById('cat-img');
+    const copyEl = document.getElementById('copy');
 
     function setEmbed(url) {
       ogImage.setAttribute("content", url);
       catImg.src = url;
       catImg.style.display = "block";
       status.textContent = "Here's your cat!";
+    }
+
+    async function copy() {
+      const url = catImg.src.replace("https://cdn2.thecatapi.com/images/", "").replace(".jpg", "");
+      await navigator.clipboard.writeText("https://www.tomcat.sh/cat/?!=" + url);
+      copyEl.innerText = "copied!";
+      setTimeout(() => {
+        copyEl.innerText = "copy cat";
+      }, 1000);
     }
 
     if (id) {
@@ -39,4 +50,5 @@
         });
     }
   </script>
+
 </body>
