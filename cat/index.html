@@ -10,6 +10,7 @@
   <p id="status">loading...</p>
   <img id="cat-img" style="max-width:100%;display:none;" />
   <a onclick="copy();" href="#" style="display: none;" id="copy">copy cat</a>
+  <a onclick="newImage()" href="#" style="display: none;">generate new</a>
   <script>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -25,6 +26,7 @@
       catImg.style.display = "block";
       status.textContent = "Here's your cat!";
       copyEl.style.display = "block";
+      newEl.style.display = "block";
     }
 
     async function copy() {
@@ -36,10 +38,11 @@
       }, 1000);
     }
 
-    if (id) {
-      const imgUrl = "https://cdn2.thecatapi.com/images/" + id + (id.includes(".gif") ? "" : ".jpg");
-      setEmbed(imgUrl);
-    } else {
+    function newImage() {
+      catImg.style.display = "none";
+      status.textContent = "loading...";
+      newEl.style.display = "none";
+      copyEl.style.display = "none";
       fetch("https://api.thecatapi.com/v1/images/search")
         .then(response => response.json())
         .then(data => {
@@ -50,7 +53,15 @@
           }
         });
     }
+
+    if (id) {
+      const imgUrl = "https://cdn2.thecatapi.com/images/" + id + (id.includes(".gif") ? "" : ".jpg");
+      setEmbed(imgUrl);
+    } else {
+      newImage();
+    }
   </script>
 
 </body>
+
 
