@@ -10,7 +10,7 @@
   <p id="status">loading...</p>
   <img id="cat-img" style="max-width:100%;display:none;" />
   <a onclick="copy();" href="#" style="display: none;" id="copy">copy cat</a>
-  <a onclick="newImage()" href="#" style="display: none;">generate new</a>
+  <a onclick="newImage()" href="#" style="display: none;" id="new">generate new</a>
   <script>
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -19,6 +19,7 @@
     const status = document.getElementById('status');
     const catImg = document.getElementById('cat-img');
     const copyEl = document.getElementById('copy');
+    const newEl = document.getElementById('new');
 
     function setEmbed(url) {
       ogImage.setAttribute("content", url);
@@ -63,5 +64,6 @@
   </script>
 
 </body>
+
 
 
