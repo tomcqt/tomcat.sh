@@ -1,6 +1,6 @@
 let misc = {
   lastUpdated: {
-    day: 19,
+    day: 20,
     month: 10,
     year: 25,
   },
