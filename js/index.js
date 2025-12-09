@@ -1,88 +1,118 @@
 // Awesome website data handler
 
-// Add projects
-for (let i = 0; i < projects.length; i++) {
-  let megacontainer = document.getElementById("projects-container");
+// Add projects (modern card layout)
+const projContainer = document.getElementById("projects-container");
+projects.forEach((p, idx) => {
+  const card = document.createElement("article");
+  card.className = "project-card";
+  // stagger reveal timing per card
+  card.style.transitionDelay = `${idx * 80}ms`;
 
-  let container = document.createElement("div");
-  container.classList.add("project");
+  const title = document.createElement("h3");
+  title.textContent = p.name;
+  card.appendChild(title);
 
-  let elmName = document.createElement("p");
-  let txtName = document.createTextNode(projects[i].name);
-
-  let elmDesc = document.createElement("p");
-  let txtDesc = document.createTextNode(projects[i].desc);
-
-  let elmSource = document.createElement("a");
-  let txtSource;
-  if (projects[i].source) {
-    txtSource = document.createTextNode("Click here to view the source code.");
-  } else {
-    txtSource = document.createTextNode(
-      "Source code unavaliable for this project."
-    );
-    elmSource.classList.add("nocursor");
-  }
-
-  let elmTime = document.createElement("p");
-  let txtTime = document.createTextNode(projects[i].time);
-
-  let elmSpac = document.createElement("p");
-  let txtSpac = document.createTextNode(
-    i + 1 == projects.length
-      ? "linespacerlinespacerlinespacerlinespacerlinespacerlinespacerlinespacerlinespacer"
-      : /*"linespacerlinespacerlinespacerlinespacerlinespacerlinespacer"*/ ""
-  );
-
-  elmName.appendChild(txtName);
-  container.appendChild(elmName);
-
-  elmDesc.appendChild(txtDesc);
-  container.appendChild(elmDesc);
-
-  elmSource.appendChild(txtSource);
-  container.appendChild(elmSource);
-  if (projects[i].source) {
-    elmSource.href = projects[i].source;
-  }
-
-  elmTime.appendChild(txtTime);
-  container.appendChild(elmTime);
-
-  elmSpac.appendChild(txtSpac);
-  elmSpac.classList.add("linespacer");
-  container.appendChild(elmSpac);
-
-  megacontainer.appendChild(container);
-
-  if (projects[i].link != false) {
-    elmDesc.innerHTML = elmDesc.innerHTML.replace(
+  const desc = document.createElement("p");
+  desc.innerHTML = p.desc;
+  if (p.link) {
+    desc.innerHTML = desc.innerHTML.replace(
       "%link%",
-      '<a href="' + projects[i].link.url + '">' + projects[i].link.name + "</a>"
+      '<a href="' + p.link.url + '">' + p.link.name + "</a>"
     );
   }
-}
+  card.appendChild(desc);
+
+  const meta = document.createElement("div");
+  meta.style.marginTop = "8px";
+  meta.style.display = "flex";
+  meta.style.justifyContent = "space-between";
+  meta.style.alignItems = "center";
+
+  const when = document.createElement("small");
+  when.style.color = "var(--muted)";
+  when.textContent = p.time || "";
+  meta.appendChild(when);
+
+  const src = document.createElement(p.source ? "a" : "span");
+  src.textContent = p.source ? "Source Code" : "Source Disabled";
+  if (p.source) src.href = p.source;
+  src.style.fontSize = "smaller";
+  src.style.color = p.source ? "var(--accent1)" : "var(--disabled)";
+  src.style.textAlign = "right";
+  if (!p.source) src.classList.add("nocursor");
+  meta.appendChild(src);
+
+  card.appendChild(meta);
+
+  projContainer.appendChild(card);
+});
 
 // add the social media links
 let scontainer = document.getElementById("socials-container");
-contacts.forEach((i, j, k) => {
-  let element = document.createElement("span");
 
-  element.style.color = i.color;
-  element.onclick = function () {
-    social(i.link);
-  };
+// helper: convert hex (#rrggbb or #rgb) to rgba string
+function hexToRgba(hex, alpha) {
+  if (!hex) return `rgba(255,255,255,${alpha})`;
+  if (hex.startsWith("rgba")) return hex; // already rgba
+  let h = hex.replace("#", "").trim();
+  if (h.length === 3)
+    h = h
+      .split("")
+      .map((c) => c + c)
+      .join("");
+  const n = parseInt(h, 16);
+  const r = (n >> 16) & 255;
+  const g = (n >> 8) & 255;
+  const b = n & 255;
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
 
-  let text = document.createTextNode(i.name);
-
-  element.appendChild(text);
-  scontainer.appendChild(element);
-
-  if (j + 1 != k.length) {
-    let dot = document.createTextNode(" • ");
-    scontainer.appendChild(dot);
+contacts.forEach((c, idx) => {
+  let el = document.createElement("button");
+  el.className = "social-pill";
+  el.textContent = c.name;
+  // use contact color subtly
+  try {
+    el.style.color = c.color || "var(--muted)";
+    el.style.borderColor = hexToRgba(c.color || "#ffffff", 0.1);
+    // set a CSS variable for hover accent (used by CSS to color the hover gradient)
+    el.style.setProperty(
+      "--social-accent",
+      hexToRgba(c.color || "#7a48ff", 0.14)
+    );
+  } catch (e) {
+    el.style.borderColor = "rgba(255,255,255,0.03)";
   }
+  el.onclick = () => social(c.link);
+  // small stagger for socials
+  el.style.transitionDelay = `${idx * 40}ms`;
+  scontainer.appendChild(el);
 });
+
+// IntersectionObserver to trigger reveal animations when elements enter viewport
+function setupRevealObserver() {
+  const obs = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08 }
+  );
+
+  // observe project cards, cards (sidebar), and social pills
+  document
+    .querySelectorAll(".project-card, .card, .social-pill")
+    .forEach((el) => {
+      obs.observe(el);
+    });
+}
+
+// run after DOM is ready; scripts are loaded at end of body so safe to run now
+setupRevealObserver();
 
 // Make the social media links work
 function social(name) {

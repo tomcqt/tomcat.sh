@@ -11,13 +11,13 @@ let projects = [
   },
   {
     name: "MeowBot",
-    desc: "A custom bot for %link% that was made to help moderate and have fun and to not play the game.",
+    desc: "A custom bot for %link% that was made to help moderate and have fun while not playing the game.",
     link: {
       name: "JKLM.FUN",
       url: "https://jklm.fun/",
     },
     source: false,
-    time: "Made During: May 2025 - July 2025",
+    time: "Made During: May 2025 to July 2025",
   },
   {
     name: "Tanuki",
@@ -41,28 +41,8 @@ let projects = [
       url: "https://sillycord.tomcat.sh/invite",
     },
     source: "https://git.tomcat.sh/Sillycord",
-    time: "Made During: July 2025 - Present",
+    time: "Made During: July 2025 to  Present",
   },
-  // {
-  //   name: "NyaByte",
-  //   desc: "The people from MeowGuard but now working on other shit. You can see our site at %link%.",
-  //   link: {
-  //     name: "nyabyte.dev",
-  //     url: "https://nyabyte.dev",
-  //   },
-  //   source: "https://github.com/nyaabyte/site",
-  //   time: "Together During: April 2025 to Present",
-  // },
-  // {
-  //   name: "Meowguard",
-  //   desc: "A botting group for the %link%.",
-  //   link: {
-  //     name: "YouTube Draws web application",
-  //     url: "https://ytdraws.win",
-  //   },
-  //   source: "https://github.com/meowguard/site",
-  //   time: "Ran during: March 2025 to April 2025",
-  // },
   {
     name: "tomcat.sh",
     desc: "The website that you are currently on! You can check out the data behind the site %link%.",

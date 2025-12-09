@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <link href="css/index.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <link rel="icon" type="image/png" href="https://cdn.tomcat.sh/images/pfp.png" />
     <meta name="description" content="tomcat's projects & socials in one place." />
     <meta name="author" content="tomcat" />
     <meta name="theme-color" content="#ca9ee6" />
@@ -24,141 +24,110 @@
     <meta name="og:url" content="https://www.tomcat.sh/" />
   </head>
   <body>
-    <p class="friends-text">sillies:</p>
-    <div class="friends">
-      <img
-        src="https://reidlab.pink/_astro/poweredbybob.DHHjNj3C.gif"
-        alt="powered by bob"
-      /><br />
-      <a href="https://code.visualstudio.com"
-        ><img
-          src="https://reidlab.pink/_astro/vscode.DU5dvM4O.png"
-          alt="made with vscode" /></a
-      ><br />
-      <img
-        src="https://mayf.pink/data/main/buttons/nyan.gif"
-        alt="nekocity"
-      /><br />
-      <iframe
-        src="//incr.easrng.net/badge?key=cat"
-        style="background: url(//incr.easrng.net/bg.gif)"
-        title="increment badge"
-        width="88"
-        height="31"
-        frameborder="0"
-      ></iframe
-      ><br />
-      <a href="https://apple.com/">
-      <img
-        src="https://hellnet.work/8831/img/buttons/Area51_Shadowlands_7775_pics_macmade.gif"
-        alt="Area51_Shadowlands_7775_pics_macmade"
-        title="Area51_Shadowlands_7775_pics_macmade"
-        height="31"
-        width="88"
-      /></a><br />
+    <div class="site">
+      <aside class="sidebar">
+        <div class="card">
+          <p class="friends-text">sillies:</p>
+          <div class="friends">
+            <img
+              src="https://reidlab.pink/_astro/poweredbybob.DHHjNj3C.gif"
+              alt="powered by bob"
+              class="friend-image"
+            />
+            <a href="https://code.visualstudio.com"
+              ><img
+                src="https://reidlab.pink/_astro/vscode.DU5dvM4O.png"
+                alt="made with vscode" class="friend-image" /></a
+            <img
+              src="https://mayf.pink/data/main/buttons/nyan.gif"
+              alt="nekocity"
+              class="friend-image"
+            />
+            <iframe
+              src="//incr.easrng.net/badge?key=cat"
+              style="background: url(//incr.easrng.net/bg.gif)"
+              title="increment badge"
+              width="88"
+              height="31"
+              frameborder="0"
+              class="friend-image"
+            ></iframe>
+            <a href="https://apple.com/">
+              <img
+                src="https://hellnet.work/8831/img/buttons/Area51_Shadowlands_7775_pics_macmade.gif"
+                alt="Area51_Shadowlands_7775_pics_macmade"
+                title="Area51_Shadowlands_7775_pics_macmade"
+                height="31"
+                width="88"
+                class="friend-image"
+              /></a>
+            <script>
+              window.webring = `<a href="https://www.tomcat.sh/"><img src="https://cdn.tomcat.sh/images/animated/tomcatwebring.gif"></a>`;
+            </script>
+            <img src="https://cdn.tomcat.sh/images/animated/tomcatwebring.gif"
+            class="friend-image">
+            <img
+              onclick="navigator.clipboard.writeText(webring)"
+              src="https://geodebreaker.github.io/copy-webring.png"
+              style="cursor: pointer"
+              class="friend-image"
+            />
+          </div>
+        </div>
 
-      <!-- copy webring -->
+        <div class="card" style="margin-top:8px">
+          <div class="socials" id="socials-container"></div>
+        </div>
+      </aside>
 
-      <script>
-        window.webring = `<a href="https://www.tomcat.sh/"><img src="https://cdn.tomcat.sh/images/animated/tomcatwebring.gif"></a>`;
-      </script>
-      <img
-        onclick="navigator.clipboard.writeText(webring)"
-        src="https://geodebreaker.github.io/copy-webring.png"
-        style="cursor: pointer"
-      />
+      <main class="main">
+        <div id="temp-message" class="card">
+          <p class="huge" id="temp_title"></p>
+          <p id="temp_message"></p>
+          <p class="linespacer">&nbsp;</p>
+        </div>
+
+        <header>
+          <div>
+            <h1>
+              hi, im
+              <div class="gradient-glow">tomcat.</div>
+            </h1>
+            <div class="subtitle">self-taught full-stack developer</div>
+          </div>
+          <div class="meta">
+            <img src="https://api.statusbadges.me/badge/status/1059605055411601429?style=for-the-badge" alt="status" />
+            <img src="https://api.statusbadges.me/badge/playing/1059605055411601429?style=for-the-badge" alt="playing" />
+            <img src="https://api.statusbadges.me/badge/vscode/1059605055411601429?style=for-the-badge" alt="vscode" />
+            <a href="https://api.statusbadges.me/openspotify/1059605055411601429" target="_blank" rel="noopener"><img src="https://api.statusbadges.me/badge/spotify/1059605055411601429?style=for-the-badge" alt="spotify"/></a>
+          </div>
+        </header>
+
+        <section class="card">
+          <div class="maintext">
+            im a self-taught <span class="gradi">full-stack developer</span>. i enjoy making little things and apps, as well as more in-depth porting projects and bots to make things better.
+          </div>
+          <div class="maintext2" style="margin-top:8px">
+            i currently know
+            <span class="gradient html">html</span>,
+            <span class="gradient css">css</span>,
+            <span class="gradient js">js</span>,
+            <span class="gradient python">python</span>, and a bit of
+            <span class="gradient cpp">c++</span> and
+            <span class="gradient rust">rust</span>. im slowly trying to learn more programming languages as i go. im a freshman in high school currently!
+          </div>
+        </section>
+
+        <h2 id="projects-header">my projects</h2>
+        <div id="projects-container"></div>
+
+        <div id="footer">website by tomcat. last updated DateHere.</div>
+
+        <!-- super fancy code email tjing -->
+        <pre id="out" class="div-center" style="display: none"></pre>
+        <pre id="code" class="div-center"></pre>
+      </main>
     </div>
-    <div id="temp-message">
-      <!-- ^^ WHY DOES THIS CODE LOOK SO BROKEN ^^ -->
-      <p class="huge" id="temp_title"></p>
-      <p id="temp_message"></p>
-      <p class="linespacer">
-        linespacerlinespacerlinespacerlinespacerlinespacerlinespacerlinespacerlinespacer
-      </p>
-    </div>
-    <h1>
-      hi, im
-      <div>tomcat.</div>
-    </h1>
-    <div class="maintext">
-      im a self-taught
-      <div class="gradi">full-stack developer</div>.
-    </div>
-    <br />
-    <div class="maintext2">
-      i currently know
-      <div class="gradi">html</div>,
-      <div class="gradi">css</div>,
-      <div class="gradi">js</div>,
-      <div class="gradi">python</div>,
-      <div class="gradi">scratch</div>, and
-      <div class="gradi">c++</div>.
-    </div>
-    <br />
-    <br />
-    <br />
-    <img
-      src="https://api.statusbadges.me/badge/status/1059605055411601429?style=for-the-badge"
-      alt="status"
-    />
-    <img
-      src="https://api.statusbadges.me/badge/playing/1059605055411601429?style=for-the-badge"
-      alt="playing"
-    />
-    <img
-      src="https://api.statusbadges.me/badge/vscode/1059605055411601429?style=for-the-badge"
-      alt="vscode"
-    />
-    <a
-      href="https://api.statusbadges.me/openspotify/1059605055411601429"
-      target="_blank"
-      rel="noopener"
-      ><img
-        src="https://api.statusbadges.me/badge/spotify/1059605055411601429?style=for-the-badge"
-        alt="spotify"
-    /></a>
-    <br />
-    <br />
-    <p class="linespacer">
-      linespacerlinespacerlinespacerlinespacerlinespacerlinespacerlinespacerlinespacer
-    </p>
-    <br />
-    <h2 id="projects-header">my projects (amount):</h2>
-    <!-- <p class="linespacer">
-      linespacerlinespacerlinespacerlinespacerlinespacerlinespacer
-    </p> -->
-    <div id="projects-container"></div>
-    <!-- <p class="linespacer">
-      linespacerlinespacerlinespacerlinespacerlinespacerlinespacer
-    </p> -->
-    <!-- <div class="social email">email</div>
-    <div class="social discord">discord</div>
-    <div class="social twitter">twitter (x)</div>
-    <div class="social bluesky">bluesky</div>
-    <div class="social reddit">reddit</div>
-    <div class="social youtube">youtube</div>
-    <div class="social twitch">twitch</div>
-    <div class="social steam">steam</div> -->
-    <div class="socials" id="socials-container">
-      <!-- <span class="email" onclick="social(this.classList[0])">email</span> • 
-      <span class="github" onclick="social(this.classList[0])">github</span> • 
-      <span class="discord" onclick="social(this.classList[0])">discord</span> •
-      <span class="twitter" onclick="social(this.classList[0])">twitter (x)</span> •
-      <span class="bluesky" onclick="social(this.classList[0])">bluesky</span> •
-      <span class="reddit" onclick="social(this.classList[0])">reddit</span> •
-      <span class="youtube" onclick="social(this.classList[0])">youtube</span> •
-      <span class="twitch" onclick="social(this.classList[0])">twitch</span> •
-      <span class="steam" onclick="social(this.classList[0])">steam</span> -->
-    </div>
-    <br />
-    <br />
-    <center id="footer">website by tomcat. last updated DateHere.</center>
-    <br />
-    <br />
-    <br />
-    <!-- super fancy code email tjing -->
-    <pre id="out" class="div-center" style="display: none"></pre>
-    <pre id="code" class="div-center"></pre>
 
     <script src="js/data/contact.js"></script>
     <!-- import contact links -->
