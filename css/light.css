@@ -1,0 +1,57 @@
+:root {
+  --bg: #f7f9fc;
+  --text: #0d1117;
+  --panel: #ffffff;
+  --muted: #6b7280;
+  --disabled: #a3a7ac;
+
+  --accent1: #7a48ff;
+  --accent2: #b08bff;
+  --accent3: #ff6666;
+
+  --glass: rgba(0, 0, 0, 0.04);
+  --radius: 14px;
+
+  --gradient1: #7ee6c8;
+  --gradient2: #9b82ff;
+
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --shadow-1: rgba(0, 0, 0, 0.06);
+  --shadow-2: rgba(0, 0, 0, 0.12);
+  --shadow-strong: rgba(0, 0, 0, 0.14);
+
+  --html1: #ffb36b;
+  --html2: #ff7a1a;
+
+  --css1: #6ddcff;
+  --css2: #289bff;
+
+  --js1: #ffd84d;
+  --js2: #f5b400;
+
+  --python1: #7fa4ff;
+  --python2: #ffbf47;
+
+  --cpp1: #98a6ff;
+  --cpp2: #4b63ff;
+
+  --rust1: #ef9c74;
+  --rust2: #d35535;
+
+  --bg-glow1: rgba(122, 72, 255, 0.1);
+  --bg-glow2: rgba(191, 168, 255, 0.06);
+  --bg-glow3: rgba(90, 50, 140, 0.08);
+  --bg-glow4: rgba(122, 72, 255, 0.06);
+
+  --border-light: rgba(0, 0, 0, 0.06);
+  --border-medium: rgba(0, 0, 0, 0.1);
+  --border-hard: rgba(0, 0, 0, 0.08);
+  --border-accent: rgba(122, 72, 255, 0.16);
+
+  --hl-byte-bg: rgba(110, 150, 255, 0.18);
+  --hl-byte-shadow: rgba(110, 150, 255, 0.45);
+
+  --hl-char-bg: rgba(255, 200, 60, 0.18);
+  --hl-char-shadow: rgba(255, 200, 60, 0.45);
+}

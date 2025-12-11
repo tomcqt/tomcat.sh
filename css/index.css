@@ -1,20 +1,5 @@
-/* full site css rewritten by a human from a broken 2000 line long css file */
-
-:root {
-  --bg: #0b0d12;
-  --text: #e6eef6;
-  --panel: #0f1720;
-  --muted: #9aa6b2;
-  --disabled: #5c6a75;
-  --accent1: #bfa8ff;
-  --accent2: #7a48ff;
-  --accent3: #ff8a8a;
-  --glass: rgba(255, 255, 255, 0.04);
-  --radius: 14px;
-  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  color: var(--muted);
-  font-size: 14px;
-}
+@import url("light.css") (prefers-color-scheme: light);
+@import url("dark.css") (prefers-color-scheme: dark);
 
 * {
   box-sizing: border-box;
@@ -70,10 +55,10 @@ body::before {
   pointer-events: none;
   background: conic-gradient(
       from 180deg at 50% 50%,
-      rgba(122, 72, 255, 0.1),
-      rgba(191, 168, 255, 0.06),
-      rgba(90, 50, 140, 0.08),
-      rgba(122, 72, 255, 0.06)
+      var(--bg-glow1),
+      var(--bg-glow2),
+      var(--bg-glow3),
+      var(--bg-glow4)
     )
     no-repeat center/cover;
   opacity: 0.9;
@@ -108,14 +93,10 @@ body::before {
   pointer-events: none;
   background: radial-gradient(
       600px 400px at 10% 20%,
-      rgba(122, 72, 255, 0.06),
+      var(--bg-glow1),
       transparent
     ),
-    radial-gradient(
-      500px 300px at 80% 80%,
-      rgba(155, 130, 255, 0.04),
-      transparent
-    );
+    radial-gradient(500px 300px at 80% 80%, var(--bg-glow2), transparent);
   background-size: cover;
   background-repeat: no-repeat;
   filter: blur(40px);
@@ -148,12 +129,11 @@ body::before {
 }
 
 .card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  background: linear-gradient(180deg, var(--glass), transparent);
   border-radius: var(--radius);
   padding: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  box-shadow: 0 4px 18px rgba(2, 6, 23, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 18px var(--shadow-1), inset 0 1px 0 var(--border-hard);
 }
 
 .friends {
@@ -177,7 +157,7 @@ body::before {
 .friends iframe:hover {
   transform: translateY(-1px) scale(1.02);
   filter: brightness(1.06) saturate(1.04);
-  box-shadow: 0 6px 14px rgba(2, 6, 23, 0.55);
+  box-shadow: 0 6px 14px var(--shadow-2);
 }
 
 .friends-text {
@@ -206,7 +186,7 @@ h1 {
   margin: 0;
   font-size: 34px;
   line-height: 1;
-  color: #f6fbff;
+  color: var(--text);
 }
 
 h1 > div {
@@ -236,14 +216,10 @@ h1 > div {
 }
 
 .project-card {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.01),
-    rgba(255, 255, 255, 0)
-  );
+  background: linear-gradient(180deg, var(--glass), transparent);
   padding: 14px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-medium);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
@@ -266,13 +242,10 @@ h1 > div {
 
 .project-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.6);
+  box-shadow: 0 12px 30px var(--shadow-1);
 }
 
 .socials {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -282,7 +255,7 @@ h1 > div {
   background: transparent;
   padding: 8px 10px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-medium);
   color: var(--muted);
   font-size: 13px;
   transition: transform 220ms ease, box-shadow 220ms ease, color 160ms ease,
@@ -291,15 +264,11 @@ h1 > div {
 }
 
 .social-pill:hover {
-  background: linear-gradient(
-    90deg,
-    var(--social-accent),
-    rgba(255, 255, 255, 0)
-  );
-  border-color: rgba(155, 130, 255, 0.16);
+  background: linear-gradient(90deg, var(--social-accent), transparent);
+  border-color: var(--border-accent);
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 30px rgba(122, 72, 255, 0.18);
-  color: #fff;
+  box-shadow: 0 8px 30px var(--shadow-2);
+  color: var(--text);
 }
 
 .project-card,
@@ -337,7 +306,7 @@ h1 > div {
 #out {
   position: relative;
   margin: 0;
-  font-family: monospace;
+  font-family: var(--mono);
   color: var(--accent2);
 }
 
@@ -358,18 +327,15 @@ h1 > div {
 }
 
 #code span.bytehl {
-  color: #eff6ff !important;
-  background-color: rgba(110, 150, 255, 0.18) !important;
-  text-shadow: 0 0 14px rgba(110, 150, 255, 0.65) !important;
-  transition: background-color 200ms ease, text-shadow 220ms ease;
+  color: var(--text) !important;
+  background-color: var(--hl-byte-bg) !important;
+  text-shadow: 0 0 14px var(--hl-byte-shadow) !important;
 }
 
 #code span.charhl {
-  color: #eff6ff !important;
-  background-color: rgba(255, 200, 60, 0.18) !important;
-  text-shadow: 0 0 12px rgba(255, 200, 60, 0.6) !important;
-  transition: background-color 200ms ease, text-shadow 200ms ease,
-    color 140ms ease;
+  color: var(--text) !important;
+  background-color: var(--hl-char-bg) !important;
+  text-shadow: 0 0 12px var(--hl-char-shadow) !important;
 }
 
 #code span.charhl,
@@ -405,62 +371,46 @@ h1 > div {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  --gradient1: #7ee6c8;
-  --gradient2: #9b82ff;
 }
 
-/* Pastel variants per language */
 .gradient.html {
-  /* richer HTML orange */
-  --gradient1: #ffc896;
-  --gradient2: #ff9850;
+  --gradient1: var(--html1);
+  --gradient2: var(--html2);
 }
 
 .gradient.css {
-  /* brighter cyan / blue */
-  --gradient1: #9ee4ff;
-  --gradient2: #5fb7ff;
+  --gradient1: var(--css1);
+  --gradient2: var(--css2);
 }
 
 .gradient.js {
-  /* punchier JS yellow */
-  --gradient1: #ffe766;
-  --gradient2: #ffd23a;
+  --gradient1: var(--js1);
+  --gradient2: var(--js2);
 }
 
 .gradient.python {
-  /* stronger Python blue + warm yellow */
-  --gradient1: #9ebfff;
-  --gradient2: #ffc864;
+  --gradient1: var(--python1);
+  --gradient2: var(--python2);
 }
 
 .gradient.cpp {
-  /* more saturated periwinkle */
-  --gradient1: #b7c0ff;
-  --gradient2: #7184ff;
+  --gradient1: var(--cpp1);
+  --gradient2: var(--cpp2);
 }
 
 .gradient.rust {
-  /* deeper rusty coral */
-  --gradient1: #f7b39b;
-  --gradient2: #ec6f6f;
+  --gradient1: var(--rust1);
+  --gradient2: var(--rust2);
 }
 
-@media (max-width: 900px) {
-  .site {
-    flex-direction: column;
-    padding: 0;
-  }
-  .sidebar {
-    position: relative;
-    order: 2;
-    width: 100%;
-    height: auto;
-    flex: unset;
-  }
-  .main {
-    order: 1;
-  }
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  cursor: pointer;
+  background: transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {
