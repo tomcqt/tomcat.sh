@@ -114,6 +114,15 @@ function setupRevealObserver() {
 // run after DOM is ready; scripts are loaded at end of body so safe to run now
 setupRevealObserver();
 
+// after reveal is done, remove the transition-delay on everything
+document.addEventListener("transitionend", () => {
+  document
+    .querySelectorAll(".project-card, .card, .social-pill")
+    .forEach((el) => {
+      el.style.transitionDelay = "0ms";
+    });
+});
+
 // Make the social media links work
 function social(name) {
   if (name != "%comingsoon%") {
