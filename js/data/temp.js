@@ -1,6 +1,5 @@
 let temp = {
   enabled: false,
-  title: "Hello, people from YtDraws!",
-  message:
-    'If you want to contact me you can scroll down to the bottom of the page.<br><a href="https://meowguardon.top">Meowguard on top!</a>',
+  title: "testing message",
+  message: "super awesome testing message right here",
 };
