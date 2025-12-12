@@ -8,6 +8,7 @@
   if (isReducedMotion) return;
 
   const nekoEl = document.createElement("div");
+  let persistPosition = true;
 
   let nekoPosX = 32;
   let nekoPosY = 32;
@@ -85,22 +86,47 @@
   };
 
   function init() {
+    let nekoFile = "img/oneko.gif";
+    const curScript = document.currentScript;
+    if (curScript && curScript.dataset.cat) {
+      nekoFile = curScript.dataset.cat;
+    }
+    if (curScript && curScript.dataset.persistPosition) {
+      if (curScript.dataset.persistPosition === "") {
+        persistPosition = true;
+      } else {
+        persistPosition = JSON.parse(
+          curScript.dataset.persistPosition.toLowerCase()
+        );
+      }
+    }
+
+    if (persistPosition) {
+      let storedNeko = JSON.parse(window.localStorage.getItem("oneko"));
+      if (storedNeko !== null) {
+        nekoPosX = storedNeko.nekoPosX;
+        nekoPosY = storedNeko.nekoPosY;
+        mousePosX = storedNeko.mousePosX;
+        mousePosY = storedNeko.mousePosY;
+        frameCount = storedNeko.frameCount;
+        idleTime = storedNeko.idleTime;
+        idleAnimation = storedNeko.idleAnimation;
+        idleAnimationFrame = storedNeko.idleAnimationFrame;
+        nekoEl.style.backgroundPosition = storedNeko.bgPos;
+      }
+    }
+
     nekoEl.id = "oneko";
     nekoEl.ariaHidden = true;
     nekoEl.style.width = "32px";
     nekoEl.style.height = "32px";
     nekoEl.style.position = "fixed";
-    nekoEl.style.pointerEvents = "auto";
+    nekoEl.style.pointerEvents = "none";
     nekoEl.style.imageRendering = "pixelated";
     nekoEl.style.left = `${nekoPosX - 16}px`;
     nekoEl.style.top = `${nekoPosY - 16}px`;
-    nekoEl.style.zIndex = Number.MAX_VALUE;
+    nekoEl.style.zIndex = 2147483647;
 
-    let nekoFile = "./oneko.gif"
-    const curScript = document.currentScript
-    if (curScript && curScript.dataset.cat) {
-      nekoFile = curScript.dataset.cat
-    }
     nekoEl.style.backgroundImage = `url(${nekoFile})`;
 
     document.body.appendChild(nekoEl);
@@ -109,6 +135,25 @@
       mousePosX = event.clientX;
       mousePosY = event.clientY;
     });
+
+    if (persistPosition) {
+      window.addEventListener("beforeunload", function (event) {
+        window.localStorage.setItem(
+          "oneko",
+          JSON.stringify({
+            nekoPosX: nekoPosX,
+            nekoPosY: nekoPosY,
+            mousePosX: mousePosX,
+            mousePosY: mousePosY,
+            frameCount: frameCount,
+            idleTime: idleTime,
+            idleAnimation: idleAnimation,
+            idleAnimationFrame: idleAnimationFrame,
+            bgPos: nekoEl.style.backgroundPosition,
+          })
+        );
+      });
+    }
 
     window.requestAnimationFrame(onAnimationFrame);
   }
@@ -124,8 +169,8 @@
       lastFrameTimestamp = timestamp;
     }
     if (timestamp - lastFrameTimestamp > 100) {
-      lastFrameTimestamp = timestamp
-      frame()
+      lastFrameTimestamp = timestamp;
+      frame();
     }
     window.requestAnimationFrame(onAnimationFrame);
   }
@@ -164,7 +209,7 @@
       }
       idleAnimation =
         avalibleIdleAnimations[
-        Math.floor(Math.random() * avalibleIdleAnimations.length)
+          Math.floor(Math.random() * avalibleIdleAnimations.length)
         ];
     }
 
@@ -195,49 +240,6 @@
     }
     idleAnimationFrame += 1;
   }
-
-  function explodeHearts() {
-    const parent = nekoEl.parentElement;
-    const rect = nekoEl.getBoundingClientRect();
-    const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const centerX = rect.left + rect.width / 2 + scrollLeft;
-    const centerY = rect.top + rect.height / 2 + scrollTop;
-
-    for (let i = 0; i < 10; i++) {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.textContent = '❤';
-      const offsetX = (Math.random() - 0.5) * 50;
-      const offsetY = (Math.random() - 0.5) * 50;
-      heart.style.left = `${centerX + offsetX - 16}px`;
-      heart.style.top = `${centerY + offsetY - 16}px`;
-      heart.style.transform = `translate(-50%, -50%) rotate(${Math.random() * 360}deg)`;
-      parent.appendChild(heart);
-
-      setTimeout(() => {
-        parent.removeChild(heart);
-      }, 1000);
-    }
-  }
-
-  const style = document.createElement('style');
-  style.innerHTML = `
-		  @keyframes heartBurst {
-			  0% { transform: scale(0); opacity: 1; }
-			  100% { transform: scale(1); opacity: 0; }
-		  }
-		  .heart {
-			  position: absolute;
-			  font-size: 2em;
-			  animation: heartBurst 1s ease-out;
-			  animation-fill-mode: forwards;
-			  color: #ab9df2;
-		  }
-	  `;
-
-  document.head.appendChild(style);
-  nekoEl.addEventListener('click', explodeHearts);
 
   function frame() {
     frameCount += 1;
