@@ -28,8 +28,11 @@ let projects = [
   },
   {
     name: "Telatro",
-    desc: "A port of Balatro to the web. This project is no longer being hosted nor on GitHub due to LocalThunk asking for it to be taken down.",
-    link: false,
+    desc: "A port of Balatro to the web! This project can be accessed at %link%. Source code is not avaliable from LocalThunk (the original developer) requesting it.",
+    link: {
+      name: "telatro.tomcat.sh",
+      url: "https://telatro.tomcat.sh/",
+    },
     source: false,
     time: "Made during: March 2025",
   },
@@ -41,7 +44,7 @@ let projects = [
       url: "https://sillycord.tomcat.sh/invite",
     },
     source: "https://git.tomcat.sh/Sillycord",
-    time: "Made During: July 2025 to  Present",
+    time: "Made During: July 2025 to Present",
   },
   {
     name: "tomcat.sh",
@@ -51,16 +54,16 @@ let projects = [
       url: "/data",
     },
     source: "https://git.tomcat.sh/tomcat.sh",
-    time: "Made during: March 2024 to April 2025",
+    time: "Made during: March 2024 to Present",
   },
-  {
-    name: "tomcat's braille art workspace",
-    desc: "A program that I made to make ASCII art using the Braille characters. This project is currently being hosted at %link%.",
-    link: {
-      name: "tomcat.sh/braille",
-      url: "https://www.tomcat.sh/braille",
-    },
-    source: false,
-    time: "Made During: December 2023",
-  },
+  // {
+  //   name: "tomcat's braille art workspace",
+  //   desc: "A program that I made to make ASCII art using the Braille characters. This project is currently being hosted at %link%.",
+  //   link: {
+  //     name: "tomcat.sh/braille",
+  //     url: "https://www.tomcat.sh/braille",
+  //   },
+  //   source: false,
+  //   time: "Made During: December 2023",
+  // },
 ];
