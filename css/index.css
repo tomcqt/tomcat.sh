@@ -15,7 +15,9 @@ a,
 .friends img,
 .friends iframe,
 .social-pill,
-#code span {
+#code span,
+#temp_yes,
+#temp_no {
   cursor: pointer;
 }
 
@@ -145,7 +147,9 @@ body::before {
 }
 
 .friends img,
-.friends iframe {
+.friends iframe,
+#temp_yes,
+#temp_no {
   width: 100%;
   height: 31px;
   object-fit: cover;
@@ -154,10 +158,41 @@ body::before {
 }
 
 .friends img:hover,
-.friends iframe:hover {
+.friends iframe:hover,
+#temp_yes:hover,
+#temp_no:hover {
   transform: translateY(-1px) scale(1.02);
   filter: brightness(1.06) saturate(1.04);
   box-shadow: 0 6px 14px var(--shadow-2);
+}
+
+#temp_yes,
+#temp_no {
+  width: 25%;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+  background: transparent;
+  box-shadow: 0 4px 18px var(--shadow-1), inset 0 1px 0 var(--border-hard);
+  border: 1px solid var(--border-accent);
+  background: linear-gradient(180deg, var(--glass), transparent);
+}
+
+#temp_yes {
+  border: 1px solid var(--border-accent);
+}
+
+#temp_yes:hover {
+  background: linear-gradient(180deg, var(--border-accent), transparent);
+}
+
+#temp_no {
+  border: 1px solid var(--border-hard);
+}
+
+#temp_no:hover {
+  background: linear-gradient(180deg, var(--border-hard), transparent);
 }
 
 .friends-text {
@@ -459,7 +494,11 @@ h1 > div {
 }
 
 #temp_message {
-  margin-bottom: 2px;
+  margin-bottom: 4px;
+}
+
+#temp_vote {
+  margin-top: 16px;
 }
 
 @media (prefers-reduced-motion: reduce) {

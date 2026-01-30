@@ -136,6 +136,37 @@ function social(name) {
 if (temp.enabled) {
   document.getElementById("temp_title").innerHTML = temp.title;
   document.getElementById("temp_message").innerHTML = temp.message;
+  if (temp.poll.enabled) {
+    document.getElementById("temp_yes").innerHTML = temp.poll.text.yes;
+    document.getElementById("temp_no").innerHTML = temp.poll.text.no;
+  } else {
+    document.getElementById("temp_vote").remove();
+  }
+  // add webhook code
+  document.getElementById("temp_yes").onclick = () => {
+    fetch(temp.poll.url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        content: "user pressed yes",
+        username: "tomcat.sh poll",
+      }),
+    });
+  };
+  document.getElementById("temp_no").onclick = () => {
+    fetch(temp.poll.url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        content: "user pressed no",
+        username: "tomcat.sh poll",
+      }),
+    });
+  };
 } else {
   document.getElementById("temp-message").remove();
 }
