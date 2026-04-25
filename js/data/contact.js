@@ -11,7 +11,7 @@ let contacts = [
   },
   {
     name: "twitter (x)",
-    link: "https://twitter.com/txmcqt",
+    link: "https://twitter.com/___tomcat_",
     color: "#1da1f2",
   },
   {
