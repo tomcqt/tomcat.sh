@@ -5,11 +5,6 @@ let contacts = [
     color: "#2da44e",
   },
   {
-    name: "discord",
-    link: "https://discord.gg/kuCm2hjsej",
-    color: "#7289da",
-  },
-  {
     name: "twitter (x)",
     link: "https://twitter.com/___tomcat_",
     color: "#1da1f2",
